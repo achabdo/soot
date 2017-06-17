@@ -26,15 +26,15 @@
   </organization>
 
   <scm>
-    <url>https://github.com/robovm/soot</url>
-    <connection>scm:git:git://github.com/robovm/soot.git</connection>
-    <developerConnection>scm:git:git@github.com:robovm/soot.git</developerConnection>
+    <url>https://github.com/MobiVM/soot</url>
+    <connection>scm:git:git://github.com/MobiVM/soot.git</connection>
+    <developerConnection>scm:git:git@github.com:MobiVM/soot.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
 
   <issueManagement>
     <system>GitHub</system>
-    <url>https://github.com/robovm/soot/issues</url>
+    <url>https://github.com/MobiVM/soot/issues</url>
   </issueManagement>
 
   <dependencies>
@@ -135,7 +135,7 @@
         <version>2.4</version>
         <inherited>true</inherited>
         <configuration>
-          <archive>                   
+          <archive>
             <manifest>
               <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
               <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
@@ -170,7 +170,7 @@
       </plugins>
     </pluginManagement>
   </build>
-  
+
   <repositories>
   </repositories>
 
@@ -187,4 +187,3 @@
   </pluginRepositories>
 
 </project>
-
