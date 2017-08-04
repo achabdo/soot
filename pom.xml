@@ -10,7 +10,7 @@
   </parent>
 
   <groupId>com.mobidevelop.robovm</groupId>
-  <version>2.5.0-5-SNAPSHOT</version>
+  <version>2.5.0-5</version>
   <artifactId>robovm-soot</artifactId>
   <name>Soot</name>
   <packaging>jar</packaging>
@@ -135,7 +135,7 @@
         <version>2.4</version>
         <inherited>true</inherited>
         <configuration>
-          <archive>
+          <archive>                   
             <manifest>
               <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
               <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
@@ -170,7 +170,7 @@
       </plugins>
     </pluginManagement>
   </build>
-
+  
   <repositories>
   </repositories>
 
@@ -187,3 +187,4 @@
   </pluginRepositories>
 
 </project>
+

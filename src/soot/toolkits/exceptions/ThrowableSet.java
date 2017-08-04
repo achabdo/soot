@@ -106,7 +106,7 @@ public final class ThrowableSet {
 	 * <code>ThrowableSet</code> representing all possible
 	 * Throwables.
 	 */
-	final ThrowableSet ALL_THROWABLES;
+	public final ThrowableSet ALL_THROWABLES;
 
 	/**
 	 * <code>ThrowableSet</code> containing all the asynchronous

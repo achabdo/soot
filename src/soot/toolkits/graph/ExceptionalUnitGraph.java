@@ -327,6 +327,7 @@ public class ExceptionalUnitGraph extends UnitGraph implements ExceptionalGraph<
 	for (Iterator<Trap> trapIt = body.getTraps().iterator(); trapIt.hasNext(); ) {
 	    Trap trap = trapIt.next();
 	    RefType catcher = trap.getException().getType();
+	    boolean trapIsReachable = false;
 	    for (Iterator<Unit> unitIt = units.iterator(trap.getBeginUnit(), 
 						  units.getPredOf(trap.getEndUnit()));
 		 unitIt.hasNext(); ) {
@@ -339,6 +340,7 @@ public class ExceptionalUnitGraph extends UnitGraph implements ExceptionalGraph<
 		if (catchableAs.getCaught() != ThrowableSet.Manager.v().EMPTY) {
 		    result = addDestToMap(result, unit, trap, catchableAs.getCaught());
 		    unitToUncaughtThrowables.put(unit, catchableAs.getUncaught());
+		    trapIsReachable = true;
 		} else {
 		    // An assertion check:
 		    if (thrownSet != catchableAs.getUncaught()) {
@@ -349,6 +351,18 @@ public class ExceptionalUnitGraph extends UnitGraph implements ExceptionalGraph<
 		    }
 		}
 	    }
+            // ROBOVM added
+            // dkimitsa: this is temporal workaround for issue https://github.com/MobiVM/robovm/issues/183
+            // which is caused by pantom class reference. As result if trap is not reachable it makes trap section detached and
+            // it looses links to instructions that defines variables, which causes detached variable to be considered as
+            // different ones and this breaks compilation robovm side
+            if (!trapIsReachable) {
+                // this will cause variables not resolved , so lets add all units that can cause this code
+                for (Iterator<Unit> unitIt = units.iterator(trap.getBeginUnit(), units.getPredOf(trap.getEndUnit())); unitIt.hasNext(); ) {
+                    Unit unit = unitIt.next();
+                    result = addDestToMap(result, unit, trap, ThrowableSet.Manager.v().ALL_THROWABLES);
+                }
+            }
 	}
 
 	for (Map.Entry<Unit,ThrowableSet> entry : unitToUncaughtThrowables.entrySet()) {
