@@ -21,6 +21,7 @@
 
 package soot;
 
+
 /** A class to group together all the global variables in Soot. */
 public class Singletons {
     public final class Global {
@@ -121,7 +122,36 @@ public class Singletons {
         if( instance_soot_jimple_toolkits_annotation_arraycheck_ArrayBoundsChecker == null ) instance_soot_jimple_toolkits_annotation_arraycheck_ArrayBoundsChecker = new soot.jimple.toolkits.annotation.arraycheck.ArrayBoundsChecker( g );
         return instance_soot_jimple_toolkits_annotation_arraycheck_ArrayBoundsChecker;
     }
+    
+    private soot.jimple.spark.pag.ArrayElement instance_soot_jimple_spark_pag_ArrayElement;
+    public soot.jimple.spark.pag.ArrayElement soot_jimple_spark_pag_ArrayElement() {
+        if( instance_soot_jimple_spark_pag_ArrayElement == null ) instance_soot_jimple_spark_pag_ArrayElement = new soot.jimple.spark.pag.ArrayElement( g );
+        return instance_soot_jimple_spark_pag_ArrayElement;
+    }
+    
+    private soot.jimple.spark.sets.AllSharedListNodes instance_soot_jimple_spark_sets_AllSharedListNodes;
+    public soot.jimple.spark.sets.AllSharedListNodes soot_jimple_spark_sets_AllSharedListNodes() {
+        if( instance_soot_jimple_spark_sets_AllSharedListNodes == null ) instance_soot_jimple_spark_sets_AllSharedListNodes = new soot.jimple.spark.sets.AllSharedListNodes( g );
+        return instance_soot_jimple_spark_sets_AllSharedListNodes;
+    }
 
+    private soot.jimple.spark.sets.AllSharedHybridNodes instance_soot_jimple_spark_sets_AllSharedHybridNodes;
+    public soot.jimple.spark.sets.AllSharedHybridNodes soot_jimple_spark_sets_AllSharedHybridNodes() {
+        if( instance_soot_jimple_spark_sets_AllSharedHybridNodes == null ) instance_soot_jimple_spark_sets_AllSharedHybridNodes = new soot.jimple.spark.sets.AllSharedHybridNodes( g );
+        return instance_soot_jimple_spark_sets_AllSharedHybridNodes;
+    }
+    
+    private soot.jimple.spark.sets.EmptyPointsToSet instance_soot_jimple_spark_sets_EmptyPointsToSet;
+    public soot.jimple.spark.sets.EmptyPointsToSet soot_jimple_spark_sets_EmptyPointsToSet() {
+        if( instance_soot_jimple_spark_sets_EmptyPointsToSet == null ) instance_soot_jimple_spark_sets_EmptyPointsToSet = new soot.jimple.spark.sets.EmptyPointsToSet( g );
+        return instance_soot_jimple_spark_sets_EmptyPointsToSet;
+    }
+    
+    private soot.jimple.spark.SparkTransformer instance_soot_jimple_spark_SparkTransformer;
+    public soot.jimple.spark.SparkTransformer soot_jimple_spark_SparkTransformer() {
+        if( instance_soot_jimple_spark_SparkTransformer == null ) instance_soot_jimple_spark_SparkTransformer = new soot.jimple.spark.SparkTransformer( g );
+        return instance_soot_jimple_spark_SparkTransformer;
+    }
 
     private soot.BooleanType instance_soot_BooleanType;
     public soot.BooleanType soot_BooleanType() {
@@ -577,6 +607,11 @@ public class Singletons {
         if( instance_soot_jimple_toolkits_annotation_j5anno_AnnotationGenerator == null ) instance_soot_jimple_toolkits_annotation_j5anno_AnnotationGenerator = new soot.jimple.toolkits.annotation.j5anno.AnnotationGenerator( g );
         return instance_soot_jimple_toolkits_annotation_j5anno_AnnotationGenerator;
     }
-
+    
+    private soot.jimple.toolkits.invoke.SynchronizerManager instance_soot_jimple_toolkits_invoke_SynchronizerManager;
+    public soot.jimple.toolkits.invoke.SynchronizerManager soot_jimple_toolkits_invoke_SynchronizerManager() {
+        if( instance_soot_jimple_toolkits_invoke_SynchronizerManager == null ) instance_soot_jimple_toolkits_invoke_SynchronizerManager = new soot.jimple.toolkits.invoke.SynchronizerManager( g );
+        return instance_soot_jimple_toolkits_invoke_SynchronizerManager;
+    }
 
 }

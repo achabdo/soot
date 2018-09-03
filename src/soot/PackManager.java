@@ -128,14 +128,12 @@ public class PackManager {
 	       
         }
 
+        addPack(p = new CallGraphPack("cg"));
         // CFG Viewer 
         /*addPack(p = new BodyPack("cfg"));
         {
             p.add(new Transform("cfg.output", CFGPrinter.v()));
         }*/
-        
-
-       
         
         onlyStandardPacks = true;
     }

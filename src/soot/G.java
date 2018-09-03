@@ -29,6 +29,8 @@ import soot.coffi.*;
 import java.io.PrintStream;
 import java.util.*;
 import soot.jimple.toolkits.pointer.util.NativeHelper;
+import soot.jimple.spark.pag.MethodPAG;
+import soot.jimple.spark.sets.P2SetFactory;
 import soot.jimple.toolkits.annotation.arraycheck.Array2ndDimensionSymbol;
 import soot.jimple.toolkits.pointer.UnionFactory;
 import soot.jimple.toolkits.typing.ClassHierarchy;
@@ -45,6 +47,10 @@ public class G extends Singletons
     public class Global {
     }
 
+    public P2SetFactory newSetFactory;
+    public P2SetFactory oldSetFactory;
+    public HashMap<SootMethod, MethodPAG> MethodPAG_methodToPag = new HashMap<SootMethod, MethodPAG>();
+    
     public long coffi_BasicBlock_ids = 0;
     public Utf8_Enumeration coffi_CONSTANT_Utf8_info_e1 = new Utf8_Enumeration();
     public Utf8_Enumeration coffi_CONSTANT_Utf8_info_e2 = new Utf8_Enumeration();

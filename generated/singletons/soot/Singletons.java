@@ -21,6 +21,8 @@
 
 package soot;
 
+import src.soot.soot;
+
 /** A class to group together all the global variables in Soot. */
 public class Singletons {
     public final class Global {
@@ -28,6 +30,7 @@ public class Singletons {
     }
     private Global g = new Global();
 
+    
     private soot.PhaseOptions instance_soot_PhaseOptions;
     public soot.PhaseOptions soot_PhaseOptions() {
         if( instance_soot_PhaseOptions == null ) instance_soot_PhaseOptions = new soot.PhaseOptions( g );
@@ -62,6 +65,12 @@ public class Singletons {
     public soot.jimple.toolkits.callgraph.CHATransformer soot_jimple_toolkits_callgraph_CHATransformer() {
         if( instance_soot_jimple_toolkits_callgraph_CHATransformer == null ) instance_soot_jimple_toolkits_callgraph_CHATransformer = new soot.jimple.toolkits.callgraph.CHATransformer( g );
         return instance_soot_jimple_toolkits_callgraph_CHATransformer;
+    }
+    
+    private soot.jimple.spark.SparkTransformer instance_soot_jimple_spark_SparkTransformer;
+    public soot.jimple.spark.SparkTransformer soot_jimple_spark_SparkTransformer() {
+        if( instance_soot_jimple_spark_SparkTransformer == null ) instance_soot_jimple_spark_SparkTransformer = new soot.jimple.spark.SparkTransformer( g );
+        return instance_soot_jimple_spark_SparkTransformer;
     }
 
     private soot.toolkits.graph.SlowPseudoTopologicalOrderer instance_soot_toolkits_graph_SlowPseudoTopologicalOrderer;
@@ -538,12 +547,6 @@ public class Singletons {
         return instance_soot_jimple_toolkits_pointer_SideEffectTagger;
     }
 
-    private soot.jimple.spark.SparkTransformer instance_soot_jimple_spark_SparkTransformer;
-    public soot.jimple.spark.SparkTransformer soot_jimple_spark_SparkTransformer() {
-        if( instance_soot_jimple_spark_SparkTransformer == null ) instance_soot_jimple_spark_SparkTransformer = new soot.jimple.spark.SparkTransformer( g );
-        return instance_soot_jimple_spark_SparkTransformer;
-    }
-
     private soot.jimple.toolkits.invoke.StaticInliner instance_soot_jimple_toolkits_invoke_StaticInliner;
     public soot.jimple.toolkits.invoke.StaticInliner soot_jimple_toolkits_invoke_StaticInliner() {
         if( instance_soot_jimple_toolkits_invoke_StaticInliner == null ) instance_soot_jimple_toolkits_invoke_StaticInliner = new soot.jimple.toolkits.invoke.StaticInliner( g );
@@ -884,6 +887,12 @@ public class Singletons {
     public soot.jimple.toolkits.annotation.j5anno.AnnotationGenerator soot_jimple_toolkits_annotation_j5anno_AnnotationGenerator() {
         if( instance_soot_jimple_toolkits_annotation_j5anno_AnnotationGenerator == null ) instance_soot_jimple_toolkits_annotation_j5anno_AnnotationGenerator = new soot.jimple.toolkits.annotation.j5anno.AnnotationGenerator( g );
         return instance_soot_jimple_toolkits_annotation_j5anno_AnnotationGenerator;
+    }
+    
+    private soot.jimple.toolkits.invoke.SynchronizerManager instance_soot_jimple_toolkits_invoke_SynchronizerManager;
+    public soot.jimple.toolkits.invoke.SynchronizerManager soot_jimple_toolkits_invoke_SynchronizerManager() {
+        if( instance_soot_jimple_toolkits_invoke_SynchronizerManager == null ) instance_soot_jimple_toolkits_invoke_SynchronizerManager = new soot.jimple.toolkits.invoke.SynchronizerManager( g );
+        return instance_soot_jimple_toolkits_invoke_SynchronizerManager;
     }
 
 }
