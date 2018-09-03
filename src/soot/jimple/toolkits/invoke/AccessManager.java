@@ -117,11 +117,11 @@ public class AccessManager
             else if(target.isProtected())
                 target.setModifiers((target.getModifiers() | Modifier.PUBLIC) &  ~Modifier.PROTECTED);
             else
-                target.setModifiers(target.getModifiers() | Modifier.PUBLIC);
+                target.setModifiers(target.getModifiers() | Modifier.PUBLIC) ;
 
-            if ((target.getModifiers() & Modifier.FINAL) == Modifier.FINAL)
+           /* if ((target.getModifiers() & Modifier.FINAL) == Modifier.FINAL)
                 target.setModifiers(target.getModifiers() & ~Modifier.FINAL);
-
+*/
             return true;
         }
         else
@@ -153,11 +153,11 @@ public class AccessManager
                 target.setModifiers((target.getModifiers() | Modifier.PUBLIC) &  ~Modifier.PRIVATE);
             else if(target.isProtected())
                 target.setModifiers((target.getModifiers() | Modifier.PUBLIC) &  ~Modifier.PROTECTED);
-            else 
-                target.setModifiers(target.getModifiers() | Modifier.PUBLIC);
-
-            if ((target.getModifiers() & Modifier.FINAL) == Modifier.FINAL)
-                target.setModifiers(target.getModifiers() & ~Modifier.FINAL);
+            else
+                target.setModifiers(target.getModifiers() | Modifier.PUBLIC) ;
+            
+           /* if ((target.getModifiers() & Modifier.FINAL) == Modifier.FINAL)
+                target.setModifiers(target.getModifiers() & ~Modifier.FINAL);*/
 
             return true;
         }
